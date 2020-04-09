@@ -21,15 +21,19 @@ namespace FigurativtArv
         /// <value></value>
         public ShapeType ShapeType {get; private set;}
         /// <summary>
-        /// Initial
+        /// Initializes a new instance of Shape
         /// </summary>
-        /// <param name="shapeType"></param>        
+        /// <param name="shapeType">The shapes shape type</param>        
         protected Shape(ShapeType shapeType)
         {
             ShapeType = shapeType;
         }
 
-        public virtual string ToString(string format) => $"ShapeType: {ShapeType} Is3D: {Is3D}";
-        
+        /// <summary>
+        /// Returns the shape as a string
+        /// </summary>
+        /// <param name="format"></param>
+        /// <returns></returns>
+        public abstract string ToString(string format);
     }
 }
