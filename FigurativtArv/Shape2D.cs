@@ -2,6 +2,9 @@ using System;
 
 namespace FigurativtArv
 {
+    /// <summary>
+    /// Represents a 2D Shape
+    /// </summary>
     public abstract class Shape2D : Shape
     {
         /// <summary>
@@ -17,13 +20,11 @@ namespace FigurativtArv
         /// <summary>
         /// Gets the area of the shape
         /// </summary>
-        /// <value></value>
         public abstract double Area { get;}
         
         /// <summary>
         /// Gets the perimeter of the shape
         /// </summary>
-        /// <value></value>
         public abstract double Perimeter { get;}
 
         /// <summary>

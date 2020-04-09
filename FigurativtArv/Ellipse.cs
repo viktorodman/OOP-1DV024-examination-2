@@ -1,8 +1,14 @@
 using System;
 namespace FigurativtArv
 {
+    /// <summary>
+    /// Represents an Ellipse
+    /// </summary>
     public class Ellipse : Shape2D
     {
+        /// <summary>
+        /// Gets the area of the ellipse
+        /// </summary>
         public override double Area
         {
             get
@@ -11,6 +17,9 @@ namespace FigurativtArv
             }
         }
 
+        /// <summary>
+        /// Gets the perimeter of the ellipse
+        /// </summary>
         public override double Perimeter
         {
             get
@@ -19,11 +28,21 @@ namespace FigurativtArv
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of an Ellipse
+        /// </summary>
+        /// <param name="diameter">The diameter of the ellpise</param>
         public Ellipse(double diameter)
             :base(ShapeType.Ellipse, diameter, diameter)
         {
             // empty
         }
+
+        /// <summary>
+        /// Initializes a new instance of an Ellipse
+        /// </summary>
+        /// <param name="hdiameter">The height of the ellipse</param>
+        /// <param name="vdiameter">The width of the ellipse</param>
         public Ellipse(double hdiameter, double vdiameter)
             :base(ShapeType.Ellipse, hdiameter, vdiameter)
         {
