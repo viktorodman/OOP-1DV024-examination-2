@@ -13,7 +13,7 @@ namespace FigurativtArv
         {
             get
             {
-                return (Math.PI) * (Length / 2) * (Width / 2);
+                return Math.PI * (Length / 2) * (Width / 2);
             }
         }
 
@@ -24,7 +24,7 @@ namespace FigurativtArv
         {
             get
             {
-                return (Math.PI) * (Math.Sqrt(Math.Pow(Length, 2) + Math.Pow(Width, 2)));
+                return Math.PI * (Math.Sqrt(Math.Pow(Length, 2) + Math.Pow(Width, 2)));
             }
         }
 

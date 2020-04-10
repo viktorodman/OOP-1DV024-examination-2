@@ -80,14 +80,14 @@ namespace FigurativtArv
         /// Returns the 2DShape as a string
         /// </summary>
         /// <param name="format">The format of the returned string</param>
-        /// <returns></returns>
+        /// <returns>A string representing the 2d shape</returns>
         public override string ToString(string format)
         {
             string str;
 
             if(format == "G" || string.IsNullOrEmpty(format))
             {
-                str = $"Längd : {_length}\nBredd : {_width}\nOmkrets : {Perimeter}\nArea : {Area}\n";
+                str = $"Längd : {_length}\nBredd : {_width}\nOmkrets : {Perimeter}\nArea : {Area}";
             } else if (format == "R")
             {
                 str = $"{ShapeType} {_length} {_width} {Perimeter} {Area}";
@@ -100,7 +100,7 @@ namespace FigurativtArv
         /// <summary>
         /// Returns the 2DShape as a string
         /// </summary>
-        /// <returns></returns>
-        public override string ToString() => $"{ShapeType} {_length} {_width} {Perimeter} {Area}";
+        /// <returns>A string representing the 2d shape</returns>
+        public override string ToString() => $"Längd : {_length}\nBredd : {_width}\nOmkrets : {Perimeter}\nArea : {Area}";
     }
 }

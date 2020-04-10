@@ -29,6 +29,11 @@ namespace FigurativtArv
             }
         }
 
+        /// <summary>
+        /// Initializes a new instance of a rectangle
+        /// </summary>
+        /// <param name="length">The length of the rectangle</param>
+        /// <param name="width">The width of the rectangle</param>
         public Rectangle(double length, double width)
             :base(ShapeType.Rectangle, length, width)
         {

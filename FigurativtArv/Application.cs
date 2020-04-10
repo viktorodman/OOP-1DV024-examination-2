@@ -6,7 +6,9 @@ namespace FigurativtArv
     {
         public void Run()
         {
-            System.Console.WriteLine("AAAAG");
+            Cuboid c = new Cuboid(10, 10, 10);
+
+            System.Console.WriteLine(c.ToString("G")); 
         }
     }
 }
