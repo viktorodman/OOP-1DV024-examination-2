@@ -6,9 +6,12 @@ namespace FigurativtArv
     {
         public void Run()
         {
-            Cuboid c = new Cuboid(10, 10, 10);
+           /*  Sphere c = new Sphere(70.8);
 
-            System.Console.WriteLine(c.ToString("G")); 
+            System.Console.WriteLine(c.ToString("G"));  */
+            Input.ReadInput();
+
+            
         }
     }
 }
