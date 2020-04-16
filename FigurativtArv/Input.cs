@@ -5,14 +5,6 @@ namespace FigurativtArv
 {
     public class Input
     {
-        public static void ReadInput() 
-        {
-           string shapeType = ReadShapeType();
-           System.Console.WriteLine(shapeType);
-           int numberOfShapes = ReadNumberOfShapes();
-           System.Console.WriteLine(numberOfShapes);
-        }
-
         public static string ReadShapeType() 
         {
             bool shapeTypeEntered = false;

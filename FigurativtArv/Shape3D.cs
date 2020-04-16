@@ -72,7 +72,7 @@ namespace FigurativtArv
         /// </summary>
         /// <returns>A string representing the 3d shape</returns>
         public override string ToString() => $"Längd : {_baseShape.Length}\nBredd : {_baseShape.Width}\n" + 
-                                            $"Höjd : ${_height}\nMantelarea : {MantelArea}\n" + 
+                                            $"Höjd : {_height}\nMantelarea : {MantelArea}\n" + 
                                             $"Begränsningsarea : {TotalSurfaceArea}\nVolym : {Volume}";
     }
 }
