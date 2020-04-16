@@ -101,6 +101,6 @@ namespace FigurativtArv
         /// Returns the 2DShape as a string
         /// </summary>
         /// <returns>A string representing the 2d shape</returns>
-        public override string ToString() => $"Längd : {_length}\nBredd : {_width}\nOmkrets : {Perimeter}\nArea : {Area}";
+        public override string ToString() => ToString("G");
     }
 }

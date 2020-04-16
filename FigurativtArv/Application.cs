@@ -10,15 +10,29 @@ namespace FigurativtArv
         public void Run()
         {
 
-           List<Shape> shapes = new List<Shape>() ;
-           shapes.AddRange(Enumerable.Repeat(0, 10).Select(x => ShapeRandomizer.GetRandom2dShape()));
            
-            foreach (Shape2D shape in shapes)
-            {
-                System.Console.WriteLine(shape.Length);
-            }
-        }
+           int numberOfShapes = Input.ReadNumberOfShapes();
+           string shapeType = Input.ReadShapeType();
+           
+           
 
+           if (shapeType == "2d")
+            {
+                
+                List<Shape2D> shapes = new List<Shape2D>();
+                shapes.AddRange(Enumerable.Repeat(0, numberOfShapes).Select(x => ShapeRandomizer.GetRandom2dShape()));
+                ShapeView.DisplayShapes(shapes);
+            }
+
+            if (shapeType == "3d")
+            {
+                List<Shape3D> shapes = new List<Shape3D>();
+                shapes.AddRange(Enumerable.Repeat(0, numberOfShapes).Select(x => ShapeRandomizer.GetRandom3dShape()));
+                ShapeView.DisplayShapes(shapes);
+            }
+
+
+        }
 
     }
 }

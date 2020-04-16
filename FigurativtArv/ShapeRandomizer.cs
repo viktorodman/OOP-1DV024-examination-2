@@ -43,7 +43,7 @@ namespace FigurativtArv
         public static Shape2D  GetRandom2dShape()
         {
             Shape2D shape;
-            switch(rand.Next(1,3))
+            switch(rand.Next(1,4))
                 {
                     case 1 : 
                         shape = new Rectangle(rand.RandomNumber(minDouble, maxDouble), rand.RandomNumber(minDouble, maxDouble));
@@ -51,18 +51,38 @@ namespace FigurativtArv
                     case 2 : 
                         shape = new Ellipse(rand.RandomNumber(minDouble, maxDouble));
                         break;
+                    case 3 :
+                        shape = new Ellipse(rand.RandomNumber(minDouble, maxDouble), rand.RandomNumber(minDouble, maxDouble));
+                        break;
                     default:
-                        shape = new Ellipse(1,1);
+                        shape = new Rectangle(1, 1);
                         break;
                 }
 
             return shape;
         } 
-        /* public static Shape3D  GetRandom3dShape(Random rand)
+        public static Shape3D  GetRandom3dShape()
         {
             
-            return shapes; 
-        }  */
+            Shape3D shape;
+            switch(rand.Next(1,3))
+                {
+                    case 1 : 
+                        shape = new Cuboid(rand.RandomNumber(minDouble, maxDouble), rand.RandomNumber(minDouble, maxDouble), rand.RandomNumber(minDouble, maxDouble));
+                        break;
+                    case 2 : 
+                        shape = new Cylinder(rand.RandomNumber(minDouble, maxDouble), rand.RandomNumber(minDouble, maxDouble), rand.RandomNumber(minDouble, maxDouble));
+                        break;
+                    case 3:
+                        shape = new Sphere(rand.RandomNumber(minDouble, maxDouble));
+                        break;
+                    default:
+                        shape = new Sphere(1);
+                        break;
+                }
+
+            return shape;
+        } 
 
 
     }
