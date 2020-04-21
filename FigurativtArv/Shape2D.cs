@@ -87,10 +87,10 @@ namespace FigurativtArv
 
             if(format == "G" || string.IsNullOrEmpty(format))
             {
-                str = $"Längd : {_length}\nBredd : {_width}\nOmkrets : {Perimeter}\nArea : {Area}";
+                str = $"Längd : {_length:F1}\nBredd : {_width:F1}\nOmkrets : {Perimeter:F1}\nArea : {Area:F1}";
             } else if (format == "R")
             {
-                str = $"{ShapeType} {_length} {_width} {Perimeter} {Area}";
+                str = $"{ShapeType, -10}{_length, 10:F1} {_width, 10:F1} {Perimeter,10:F1} {Area,10:F1}";
             } else {
                 throw new FormatException("No a correct format");
             }

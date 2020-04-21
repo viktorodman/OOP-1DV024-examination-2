@@ -55,12 +55,12 @@ namespace FigurativtArv
 
             if(format == "G" || string.IsNullOrEmpty(format))
             {
-                str = $"Längd : {_baseShape.Length}\nBredd : {_baseShape.Width}\n" + 
-                        $"Höjd : {_height}\nMantelarea : {MantelArea}\n" + 
-                        $"Begränsningsarea : {TotalSurfaceArea}\nVolym : {Volume}";
+                str = $"Längd : {_baseShape.Length:F1}\nBredd : {_baseShape.Width:F1}\n" + 
+                        $"Höjd : {_height:F1}\nMantelarea : {MantelArea:F1}\n" + 
+                        $"Begränsningsarea : {TotalSurfaceArea:F1}\nVolym : {Volume:F1}";
             } else if (format == "R")
             {
-                str = $"{ShapeType} {_baseShape.Length} {_baseShape.Width} {_height} {MantelArea} {TotalSurfaceArea} {Volume}";
+                str = $"{ShapeType, -10} {_baseShape.Length, 10:F1} {_baseShape.Width, 10:F1} {_height, 10:F1} {MantelArea, 10:F1} {TotalSurfaceArea, 10:F1} {Volume, 10:F1}";
             } else {
                 throw new FormatException("No a correct format");
             }

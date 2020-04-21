@@ -4,7 +4,10 @@ namespace FigurativtArv
 {
     public class Sphere : Shape3D
     {
-        public double Diameter { get; set; }
+        public double Diameter { 
+            get => _baseShape.Length;
+            set => _baseShape.Length = value;
+        }
 
         public override double MantelArea
         {
@@ -24,7 +27,7 @@ namespace FigurativtArv
         public Sphere(double diameter)
             :base(ShapeType.Sphere, new Ellipse(diameter), diameter)
         {
-            Diameter = diameter;
+            // empty
         }
     }
 }

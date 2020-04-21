@@ -4,18 +4,15 @@ namespace FigurativtArv
 {
     public class ShapeView
     {
-        public static void DisplayShapes(List<Shape2D> shapes)
+      
+        public static void DisplayShapes(List<Shape> shapes)
         {
-            foreach (Shape2D shape in shapes)
+             foreach (Shape shape in shapes)
             {
+                System.Console.WriteLine("======================");
                 System.Console.WriteLine(shape.ToString("R"));
-            }
-        }
-        public static void DisplayShapes(List<Shape3D> shapes)
-        {
-             foreach (Shape3D shape in shapes)
-            {
-                System.Console.WriteLine(shape.ToString("R"));
+                System.Console.WriteLine("======================");
+
             }
         }
     }
