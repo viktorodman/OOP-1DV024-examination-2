@@ -18,16 +18,13 @@ namespace FigurativtArv
 
             if (shapeType =="2d")
             {
-                int lineWidth = CreateTableHeader2D().Length;
-                shapesString += CreateTableHeaderLine(lineWidth);
                 shapesString += CreateTableHeader2D();
-                shapesString += CreateTableHeaderLine(lineWidth);
             } else if(shapeType =="3d")
             {
-                int lineWidth = CreateTableHeader3D().Length;
-                shapesString += CreateTableHeaderLine(lineWidth);
                 shapesString += CreateTableHeader3D();
-                shapesString += CreateTableHeaderLine(lineWidth);
+            } else 
+            {
+                throw new FormatException("shapeType must be '2d' or '3d'");
             }
 
             shapes.ForEach(shape => shapesString += shape.ToString("R") + "\n");
@@ -39,13 +36,25 @@ namespace FigurativtArv
         /// Creates a table header for a 2d shape
         /// </summary>
         /// <returns>A string representing a table header for a 2d shape</returns>
-        public static string CreateTableHeader2D() => $"{"Shape", -15}{"Length", 15}{"Width", 15}{"Perimeter", 15}{"Area", 15}\n";
+        public static string CreateTableHeader2D() 
+        {
+            string tableHeaders = $"{"Shape", -15}{"Length", 15}{"Width", 15}{"Perimeter", 15}{"Area", 15}\n";
+            string headerLine = CreateTableHeaderLine(tableHeaders.Length);
+
+            return headerLine + tableHeaders + headerLine;
+        }  
 
         /// <summary>
         /// Creates a table header for a 2d shape
         /// </summary>
         /// <returns>A string representing a table header for a 2d shape</returns>
-        public static string CreateTableHeader3D() => $"{"Shape", -15}{"Length", 15}{"Width", 15}{"Heigth", 15}{"MantelArea", 15}{"Total S.Area", 15}{"Volume", 15}\n";
+        public static string CreateTableHeader3D() 
+        {
+            string tableHeaders = $"{"Shape", -15}{"Length", 15}{"Width", 15}{"Heigth", 15}{"MantelArea", 15}{"Total S.Area", 15}{"Volume", 15}\n";
+            string headerLine = CreateTableHeaderLine(tableHeaders.Length);
+
+            return headerLine + tableHeaders + headerLine;
+        } 
         
         /// <summary>
         /// Creates a horizontal line.

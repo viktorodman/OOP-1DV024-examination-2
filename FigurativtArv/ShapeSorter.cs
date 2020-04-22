@@ -34,7 +34,11 @@ namespace FigurativtArv
                                                 .ToList();
                 
                 temp2DShapes.ForEach(shape => sortedShapes.Add(shape));
+            } else
+            {
+                throw new FormatException("shapeType must be '2d' or '3d'");
             }
+
             return sortedShapes;
         }
     }
