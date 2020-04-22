@@ -39,7 +39,7 @@ namespace FigurativtArv
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException("Value must be greater than 0");
+                    throw new ArgumentOutOfRangeException("Length must be greater than 0");
                 }
                 _length = value;
             }
@@ -57,7 +57,7 @@ namespace FigurativtArv
             { 
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException("Value must be greater than 0");
+                    throw new ArgumentOutOfRangeException("Width must be greater than 0");
                 }
                 _width = value;
             }
@@ -92,7 +92,7 @@ namespace FigurativtArv
             {
                 str = $"{ShapeType, -15}{_length, 15:F1}{_width, 15:F1}{Perimeter,15:F1}{Area,15:F1}";
             } else {
-                throw new FormatException("No a correct format");
+                throw new FormatException("Format must be: 'R' 'G' null or empty");
             }
             return str;
         }

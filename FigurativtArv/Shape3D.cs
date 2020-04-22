@@ -28,7 +28,7 @@ namespace FigurativtArv
             {
                 if (value <= 0)
                 {
-                    throw new ArgumentOutOfRangeException("Value must be greater than 0");
+                    throw new ArgumentOutOfRangeException("Height must be greater than 0");
                 }
                 
                 _height = value;
@@ -93,7 +93,7 @@ namespace FigurativtArv
             {
                 str = $"{ShapeType, -15}{_baseShape.Length, 15:F1}{_baseShape.Width, 15:F1}{_height, 15:F1}{MantelArea, 15:F1}{TotalSurfaceArea, 15:F1}{Volume, 15:F1}";
             } else {
-                throw new FormatException("No a correct format");
+                throw new FormatException("Format must be: 'R' 'G' null or empty");
             }
             return str;
         }
