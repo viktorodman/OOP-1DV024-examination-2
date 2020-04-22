@@ -1,12 +1,25 @@
 using System;
 namespace FigurativtArv
 {
+    /// <summary>
+    /// Represents a 3D Shape
+    /// </summary>
     public abstract class Shape3D: Shape
     {
+        /// <summary>
+        /// The 3d shapes 2d base shape
+        /// </summary>
         protected Shape2D _baseShape;
         
+        /// <summary>
+        /// The height of the shape
+        /// </summary>
         private double _height;
 
+        /// <summary>
+        /// Gets and Sets the Height of the shape
+        /// </summary>
+        /// <value></value>
         public double Height 
         {
             get => _height;
@@ -22,21 +35,39 @@ namespace FigurativtArv
             }
         }
 
+        /// <summary>
+        /// Gets the Mantel Area of the shape 
+        /// </summary>
+        /// <value></value>
         public virtual double MantelArea
         {
             get => _baseShape.Perimeter * _height;
         }
 
+        /// <summary>
+        /// Gets the Total Surface Area of the shape.
+        /// </summary>
+        /// <value></value>
         public virtual double TotalSurfaceArea
         {
             get => MantelArea +  (2 * _baseShape.Area);
         }
 
+        /// <summary>
+        /// Gets the Volume of the shape
+        /// </summary>
+        /// <value></value>
         public virtual double Volume
         {
             get => _baseShape.Area * _height;
         }
 
+        /// <summary>
+        /// Initializes a new instance of 3DShape
+        /// </summary>
+        /// <param name="shapeType">The shape type of the 3d shape</param>
+        /// <param name="baseShape">The 2d base shape of the 3d shape</param>
+        /// <param name="height">The height of the shape</param>
         protected Shape3D(ShapeType shapeType, Shape2D baseShape, double height)
             :base(shapeType)
         {
@@ -60,7 +91,7 @@ namespace FigurativtArv
                         $"Begränsningsarea : {TotalSurfaceArea:F1}\nVolym : {Volume:F1}";
             } else if (format == "R")
             {
-                str = $"{ShapeType, -10} {_baseShape.Length, 10:F1} {_baseShape.Width, 10:F1} {_height, 10:F1} {MantelArea, 10:F1} {TotalSurfaceArea, 10:F1} {Volume, 10:F1}";
+                str = $"{ShapeType, -15}{_baseShape.Length, 15:F1}{_baseShape.Width, 15:F1}{_height, 15:F1}{MantelArea, 15:F1}{TotalSurfaceArea, 15:F1}{Volume, 15:F1}";
             } else {
                 throw new FormatException("No a correct format");
             }

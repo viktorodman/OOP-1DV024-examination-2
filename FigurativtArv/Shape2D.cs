@@ -90,7 +90,7 @@ namespace FigurativtArv
                 str = $"Längd : {_length:F1}\nBredd : {_width:F1}\nOmkrets : {Perimeter:F1}\nArea : {Area:F1}";
             } else if (format == "R")
             {
-                str = $"{ShapeType, -10}{_length, 10:F1} {_width, 10:F1} {Perimeter,10:F1} {Area,10:F1}";
+                str = $"{ShapeType, -15}{_length, 15:F1}{_width, 15:F1}{Perimeter,15:F1}{Area,15:F1}";
             } else {
                 throw new FormatException("No a correct format");
             }

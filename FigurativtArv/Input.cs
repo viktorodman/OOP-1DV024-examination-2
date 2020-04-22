@@ -3,8 +3,17 @@ using System;
 
 namespace FigurativtArv
 {
+
+    /// <summary>
+    /// Represents user input
+    /// </summary>
     public class Input
     {
+        /// <summary>
+        /// Prompts the user to enter a shape type
+        /// The shape type can be "2d" or "3d"
+        /// </summary>
+        /// <returns>The entered shape type</returns>
         public static string ReadShapeType() 
         {
             bool shapeTypeEntered = false;
@@ -24,6 +33,11 @@ namespace FigurativtArv
             return shapeType;   
         }
 
+        /// <summary>
+        /// Prompts the user to enter the number of shapes to create
+        /// The number must be greater than 0
+        /// </summary>
+        /// <returns>The entered number of shapes</returns>
         public static int ReadNumberOfShapes()
         {
             int numberOfShapes;

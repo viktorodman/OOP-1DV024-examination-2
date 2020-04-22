@@ -2,9 +2,19 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 namespace FigurativtArv
-{
+{   
+    /// <summary>
+    /// Handles sorting of shapes
+    /// </summary>
     public static class ShapeSorter
     {
+        /// <summary>
+        /// Takes a list of shapes and returns a sorted version of that list.
+        /// If shapes Sorts by shape type name and then by 
+        /// </summary>
+        /// <param name="shapeType">String: What type of shape, 2d or 3d</param>
+        /// <param name="shapes">A list of the type Shape containing the shapes to sort</param>
+        /// <returns>A new list of shapes</returns>
         public static List<Shape> SortShapes(string shapeType, List<Shape> shapes)
         {
             List<Shape> sortedShapes = new List<Shape>();

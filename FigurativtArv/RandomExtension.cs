@@ -7,11 +7,15 @@ namespace RandomExtension
     /// </summary>
     public static class RandomExtension
     {
-        public static double RandomNumber(this Random random, double minValue, double maxValue) {
+        /// <summary>
+        /// Returns a random double
+        /// </summary>
+        /// <param name="random">An instance of the class Random</param>
+        /// <param name="minValue">The minimum random double</param>
+        /// <param name="maxValue">The maximum random double</param>
+        /// <returns>A random double</returns>
+        public static double RandomDouble(this Random random, double minValue, double maxValue) {
             return random.NextDouble() * (maxValue - minValue) + minValue;
-        }
-        public static double RandomNumber(this Random random, int minValue, int maxValue) {
-            return random.Next() * (maxValue - minValue) + minValue;
         }
     }
 }
