@@ -7,7 +7,7 @@ namespace FigurativtArv
     /// <summary>
     /// Represents user input
     /// </summary>
-    public class Input
+    public static class Input
     {
         /// <summary>
         /// Prompts the user to enter a shape type
