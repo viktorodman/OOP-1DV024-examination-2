@@ -31,7 +31,7 @@ namespace FigurativtArv
             
                 shapes = ShapeRandomizer.GetRandomShapes(numberOfShapes, shapeType);
 
-                shapes = ShapeSorter.SortShapes(shapeType, shapes);
+                shapes = ShapeSorter.SortShapes(shapes);
 
                 ShapeView.DisplayShapes(shapes, shapeType);
             }

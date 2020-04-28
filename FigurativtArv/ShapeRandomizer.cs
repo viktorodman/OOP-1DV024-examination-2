@@ -25,13 +25,20 @@ namespace FigurativtArv
         /// <returns></returns>
         private static Random rand = new Random();
 
-    
+        /// <summary>
+        /// Return a list of random shapes.
+        /// </summary>
+        /// <param name="numberOfShapes">The number of shapes to create</param>
+        /// <param name="shapeType">2d shapes or 3d shapes</param>
+        /// <returns>A list of shapes</returns>
         public static List<Shape> GetRandomShapes(int numberOfShapes, string shapeType) 
         {
+            if (numberOfShapes < 1) {
+                throw new ArgumentOutOfRangeException("Number of shapes must be greater than 0");
+            }
+
             List<Shape> shapes = new List<Shape>();
             
-
-
             switch (shapeType)
             {
                 case "2d":

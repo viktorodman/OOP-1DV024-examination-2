@@ -10,35 +10,35 @@ namespace FigurativtArv
     {
         /// <summary>
         /// Takes a list of shapes and returns a sorted version of that list.
-        /// If shapes Sorts by shape type name and then by 
         /// </summary>
-        /// <param name="shapeType">String: What type of shape, 2d or 3d</param>
         /// <param name="shapes">A list of the type Shape containing the shapes to sort</param>
         /// <returns>A new list of shapes</returns>
-        public static List<Shape> SortShapes(string shapeType, List<Shape> shapes)
+        public static List<Shape> SortShapes(List<Shape> shapes)
         {
-            List<Shape> sortedShapes = new List<Shape>();
-            if (shapeType == "2d")
+            if (shapes == null || shapes.Count < 1)
             {
-                List<Shape2D> temp2DShapes = shapes.OfType<Shape2D>()
-                                                .OrderBy(shape => shape.ShapeType.ToString())
-                                                .ThenBy(shape => shape.Area)
-                                                .ToList();
-                
-                temp2DShapes.ForEach(shape => sortedShapes.Add(shape));
-            } else if (shapeType == "3d")
+                throw new InvalidOperationException("Cant sort an empty list");
+            } 
+
+            List<Shape> sortedShapes = new List<Shape>();
+
+            if (shapes[0].Is3D)
             {
                 List<Shape3D> temp3DShapes = shapes.OfType<Shape3D>()
                                                 .OrderBy(shape => shape.ShapeType.ToString())
                                                 .ThenBy(shape => shape.Volume)
                                                 .ToList();
                 
-                temp3DShapes.ForEach(shape => sortedShapes.Add(shape));
+                sortedShapes.AddRange(temp3DShapes);
             } else
             {
-                throw new FormatException("shapeType must be '2d' or '3d'");
-            }
-
+                List<Shape2D> temp2DShapes = shapes.OfType<Shape2D>()
+                                                .OrderBy(shape => shape.ShapeType.ToString())
+                                                .ThenBy(shape => shape.Area)
+                                                .ToList();
+                
+                sortedShapes.AddRange(temp2DShapes);
+            } 
             return sortedShapes;
         }
     }
