@@ -29,7 +29,7 @@ namespace FigurativtArv
 
                 List<Shape> shapes = new List<Shape>();
             
-                shapes.AddRange(Enumerable.Repeat(0, numberOfShapes).Select(x => ShapeRandomizer.GetRandomShape((shapeType == "2d") ? shapes2d : shapes3d)));
+                shapes = ShapeRandomizer.GetRandomShapes(numberOfShapes, shapeType);
 
                 shapes = ShapeSorter.SortShapes(shapeType, shapes);
 

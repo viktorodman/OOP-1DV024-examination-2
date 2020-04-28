@@ -13,7 +13,7 @@ namespace FigurativtArv
         /// <value></value>
         public bool Is3D
         {
-            get => ((int)ShapeType > 2) ? false : true;
+            get => (ShapeType > ShapeType.Ellipse);
         }
         /// <summary>
         /// Gets and sets the Shape Type.

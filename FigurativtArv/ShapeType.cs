@@ -6,7 +6,7 @@ namespace FigurativtArv
     /// </summary>
     public enum ShapeType
     {
-        Rectangle = 1,
+        Rectangle,
         Ellipse,
         Cuboid,
         Cylinder,

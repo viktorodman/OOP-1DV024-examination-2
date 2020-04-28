@@ -28,12 +28,12 @@ namespace FigurativtArv
                 temp2DShapes.ForEach(shape => sortedShapes.Add(shape));
             } else if (shapeType == "3d")
             {
-                List<Shape3D> temp2DShapes = shapes.OfType<Shape3D>()
+                List<Shape3D> temp3DShapes = shapes.OfType<Shape3D>()
                                                 .OrderBy(shape => shape.ShapeType.ToString())
                                                 .ThenBy(shape => shape.Volume)
                                                 .ToList();
                 
-                temp2DShapes.ForEach(shape => sortedShapes.Add(shape));
+                temp3DShapes.ForEach(shape => sortedShapes.Add(shape));
             } else
             {
                 throw new FormatException("shapeType must be '2d' or '3d'");

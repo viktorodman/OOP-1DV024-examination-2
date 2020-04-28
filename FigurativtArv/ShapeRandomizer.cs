@@ -25,29 +25,56 @@ namespace FigurativtArv
         /// <returns></returns>
         private static Random rand = new Random();
 
+    
+        public static List<Shape> GetRandomShapes(int numberOfShapes, string shapeType) 
+        {
+            List<Shape> shapes = new List<Shape>();
+            
+
+
+            switch (shapeType)
+            {
+                case "2d":
+                    shapes.AddRange(Enumerable
+                    .Repeat(0, numberOfShapes)
+                    .Select(x => GetRandomShape((ShapeType)rand.Next((int)ShapeType.Rectangle, (int)ShapeType.Ellipse + 1))));
+                    break;
+                case "3d":
+                    shapes.AddRange(Enumerable
+                    .Repeat(0, numberOfShapes)
+                    .Select(x => GetRandomShape((ShapeType)rand.Next((int)ShapeType.Cuboid, (int)ShapeType.Sphere + 1))));
+                    break;
+                default:
+                    throw new FormatException("shapeType must be 2d or 3d");
+                
+            }
+
+            return shapes;
+        }
+
         /// <summary>
         /// Takes a number range and returns a random shape
         /// </summary>
         /// <param name="shapeTypes">A number range representing shapes</param>
         /// <returns>A random Shape</returns>
-        public static Shape  GetRandomShape(int[] shapeTypes)
+        public static Shape  GetRandomShape(ShapeType shapeType)
         {
             Shape shape;
-            switch(rand.Next(shapeTypes.Min(), shapeTypes.Max() + 1))
+            switch(shapeType)
                 {
-                    case 1 : 
+                    case ShapeType.Rectangle : 
                         shape = new Rectangle(rand.RandomDouble(minDouble, maxDouble), rand.RandomDouble(minDouble, maxDouble));
                         break;
-                    case 2 : 
+                    case ShapeType.Ellipse : 
                         shape = new Ellipse(rand.RandomDouble(minDouble, maxDouble), rand.RandomDouble(minDouble, maxDouble));
                         break;
-                    case 3:
+                    case ShapeType.Cuboid:
                         shape = new Cuboid(rand.RandomDouble(minDouble, maxDouble), rand.RandomDouble(minDouble, maxDouble), rand.RandomDouble(minDouble, maxDouble));
                         break;
-                    case 4:
+                    case ShapeType.Cylinder:
                         shape = new Cylinder(rand.RandomDouble(minDouble, maxDouble), rand.RandomDouble(minDouble, maxDouble), rand.RandomDouble(minDouble, maxDouble));
                         break;
-                    case 5:
+                    case ShapeType.Sphere:
                         shape = new Sphere(rand.RandomDouble(minDouble, maxDouble));
                         break;
                     default:
@@ -55,7 +82,7 @@ namespace FigurativtArv
                         break;
                 }
             return shape;
-        } 
+        }
 
 
     }
