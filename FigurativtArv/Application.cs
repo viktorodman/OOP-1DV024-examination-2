@@ -30,10 +30,8 @@ namespace FigurativtArv
                 List<Shape> shapes = new List<Shape>();
             
                 shapes = ShapeRandomizer.GetRandomShapes(numberOfShapes, shapeType);
-
                 shapes = ShapeSorter.SortShapes(shapes);
-
-                ShapeView.DisplayShapes(shapes, shapeType);
+                ShapeView.DisplayShapes(shapes);
             }
             catch (Exception e)
             {

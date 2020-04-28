@@ -12,19 +12,21 @@ namespace FigurativtArv
         /// </summary>
         /// <param name="shapes">A list of the type shape</param>
         /// <param name="shapeType">String: 2d or 3d</param>
-        public static void DisplayShapes(List<Shape> shapes, string shapeType)
+        public static void DisplayShapes(List<Shape> shapes)
         {
+            if (shapes == null || shapes.Count < 1)
+            {
+                throw new InvalidOperationException("Cant display an empty list");
+            }
+
             string shapesString = "";
 
-            if (shapeType =="2d")
-            {
-                shapesString += CreateTableHeader2D();
-            } else if(shapeType =="3d")
+            if (shapes[0].Is3D)
             {
                 shapesString += CreateTableHeader3D();
-            } else 
+            } else
             {
-                throw new FormatException("shapeType must be '2d' or '3d'");
+               shapesString += CreateTableHeader2D();
             }
 
             shapes.ForEach(shape => shapesString += shape.ToString("R") + "\n");
